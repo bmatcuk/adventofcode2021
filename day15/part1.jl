@@ -69,7 +69,7 @@ end
 visited = falses(size(riskmap))
 while !visited[width, height]
   # find the next node with the smallest tentative cost
-  sort!(queue; by=((x,y),) -> cost[x,y], rev=true)
+  sort!(queue; by=((x,y),) -> cost[x,y], rev=true, alg=InsertionSort)
   (x,y) = pop!(queue)
   visited[x,y] = true
 
